@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K8S First Project</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+
+        <h1>Welcome to My First Kubernetes Project</h1>
+
+        <form method="post">
+            <label for="name">Enter your name:</label>
+            <input id="name" type="text" name="name" required>
+            <button type="submit">Submit</button>
+        </form>
+
+        {% if name %}
+        <h3>Hello {{ name }}, this application is running on a Kubernetes cluster.</h3>
+        {% endif %}
+
+        <div class="description">
+            <p>
+                This project demonstrates an end-to-end deployment of a Flask web application
+                on a Kubernetes environment using <strong>Docker</strong> and a local
+                <strong>Minikube</strong> cluster.
+                The goal is to understand containerization, Kubernetes deployments,
+                service exposure, and basic operational workflows in a real-world setup.
+            </p>
+        </div>
+
+        <div class="workflow">
+            <h2>Project Workflow (High Level)</h2>
+            <ul>
+                <li>
+                    <strong>Application Development:</strong>
+                    Build and test a simple Flask web application locally.
+                </li>
+                <li>
+                    <strong>Containerization:</strong>
+                    Create a Docker image using a Dockerfile and validate it by running the container.
+                </li>
+                <li>
+                    <strong>Local Kubernetes Setup:</strong>
+                    Install and start a Minikube cluster to simulate a Kubernetes environment.
+                </li>
+                <li>
+                    <strong>Image Management:</strong>
+                    Load the Docker image into Minikube or push it to Docker Hub when required.
+                </li>
+                <li>
+                    <strong>Kubernetes Deployment:</strong>
+                    Define and apply a deployment YAML file to create Pods and manage replicas.
+                </li>
+                <li>
+                    <strong>Service Exposure:</strong>
+                    Expose the application using a Kubernetes Service and access it via Minikube.
+                </li>
+                <li>
+                    <strong>Monitoring & Debugging:</strong>
+                    Inspect Pods, logs, services, and use the Minikube dashboard for visibility.
+                </li>
+            </ul>
+        </div>
+
+        <div class="footer-note">
+            This project serves as a foundation for understanding Kubernetes-based application deployment.
+        </div>
+
+    </div>
+</body>
+</html>
